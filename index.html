@@ -1,49 +1,32 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Travel Recommendation</title>
-</head>
-<body>
-
-<!-- Navigation -->
-<a href="#">Home</a>
-<a href="about.html">About Us</a>
-<a href="contact.html">Contact Us</a>
-
-<br><br>
-
-<!-- Search -->
-<input type="text" id="searchBox">
-<button onclick="search()">Search</button>
-<button onclick="clearSearch()">Clear</button>
-
-<br><br>
-
-<div id="results"></div>
-
 <script>
 function search() {
     var input = document.getElementById("searchBox").value.toLowerCase();
     var results = document.getElementById("results");
 
     if (input == "beach") {
-        results.innerHTML = "<h2>Beaches</h2>" +
-        "<img src='https://picsum.photos/200?1'>" +
-        "<img src='https://picsum.photos/200?2'>" +
-        "<p>Goa Beach, Marina Beach</p>";
+        results.innerHTML = `
+        <h2>Beaches</h2>
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" width="250">
+        <img src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda" width="250">
+        <p>Goa Beach, Marina Beach</p>`;
     }
+
     else if (input == "temple") {
-        results.innerHTML = "<h2>Temples</h2>" +
-        "<img src='https://picsum.photos/200?3'>" +
-        "<img src='https://picsum.photos/200?4'>" +
-        "<p>Tirupati Temple, Meenakshi Temple</p>";
+        results.innerHTML = `
+        <h2>Temples</h2>
+        <img src="https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3" width="250">
+        <img src="https://images.unsplash.com/photo-1603297631958-6d7a77f0b5c5" width="250">
+        <p>Tirupati Temple, Meenakshi Temple</p>`;
     }
+
     else if (input == "country") {
-        results.innerHTML = "<h2>Countries</h2>" +
-        "<img src='https://picsum.photos/200?5'>" +
-        "<img src='https://picsum.photos/200?6'>" +
-        "<p>India, France</p>";
+        results.innerHTML = `
+        <h2>Countries</h2>
+        <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da" width="250">
+        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34" width="250">
+        <p>India, France</p>`;
     }
+
     else {
         results.innerHTML = "<p>No results found</p>";
     }
@@ -53,6 +36,3 @@ function clearSearch() {
     document.getElementById("results").innerHTML = "";
 }
 </script>
-
-</body>
-</html>
