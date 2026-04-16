@@ -1,9 +1,21 @@
-<nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="contact.html">Contact Us</a>
+<div id="results"></div>
 
-    <input type="text" id="searchBox" placeholder="Search here">
-    <button onclick="search()">Search</button>
-    <button onclick="clearSearch()">Clear</button>
-</nav>
+<script>
+function search() {
+    let input = document.getElementById("searchBox").value.toLowerCase();
+    let results = document.getElementById("results");
+
+    if (input.includes("beach")) {
+        results.innerHTML = `
+        <h2>Beaches</h2>
+        <img src="https://via.placeholder.com/150">
+        <img src="https://via.placeholder.com/150">
+        <p>Goa Beach, Marina Beach</p>
+        `;
+    }
+}
+
+function clearSearch() {
+    document.getElementById("results").innerHTML = "";
+}
+</script>
