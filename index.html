@@ -7,25 +7,24 @@
 <body>
 
     <!-- Navigation Bar -->
-    <a href="#">Home</a>
-    <a href="#">About Us</a>
-    <a href="#">Contact Us</a>
+    <nav>
+        <a href="#">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
 
-    <br><br>
+    <br>
 
-    <!-- Search Box -->
-    <input type="text" id="searchInput" placeholder="Search...">
-    <button onclick="searchPlaces()">Search</button>
+    <!-- Search Bar -->
+    <input type="text" id="searchInput" placeholder="Search here">
+    <button onclick="search()">Search</button>
     <button onclick="clearSearch()">Clear</button>
-
-    <br><br>
 
     <!-- Result Section -->
     <div id="result"></div>
 
-    <!-- JavaScript -->
     <script>
-        function searchPlaces() {
+        function search() {
             let input = document.getElementById("searchInput").value.toLowerCase();
             let result = document.getElementById("result");
 
@@ -33,8 +32,10 @@
             if (input.includes("beach")) {
                 result.innerHTML = `
                 <h2>Beaches</h2>
+
                 <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" width="300">
                 <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" width="300">
+
                 <p>Goa Beach, Marina Beach</p>
                 `;
             }
@@ -43,8 +44,10 @@
             else if (input.includes("temple")) {
                 result.innerHTML = `
                 <h2>Temples</h2>
-                <img src="https://images.unsplash.com/photo-1599661046289-e31897846e41" width="300">
-                <img src="https://images.unsplash.com/photo-1605640840605-14ac1855827b" width="300">
+
+                <img src="https://images.unsplash.com/photo-1561361058-c24cecae35ca" width="300">
+                <img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220" width="300">
+
                 <p>Tirupati Temple, Meenakshi Temple</p>
                 `;
             }
@@ -53,5 +56,25 @@
             else if (input.includes("country")) {
                 result.innerHTML = `
                 <h2>Countries</h2>
+
                 <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da" width="300">
-                <img
+                <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34" width="300">
+
+                <p>India, France</p>
+                `;
+            }
+
+            // DEFAULT
+            else {
+                result.innerHTML = "<p>No results found</p>";
+            }
+        }
+
+        function clearSearch() {
+            document.getElementById("searchInput").value = "";
+            document.getElementById("result").innerHTML = "";
+        }
+    </script>
+
+</body>
+</html>
