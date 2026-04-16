@@ -6,58 +6,52 @@
 
 <body>
 
-<!-- Navigation -->
-<a href="#">Home</a>
-<a href="#">About Us</a>
-<a href="#">Contact Us</a>
+    <!-- Navigation Bar -->
+    <a href="#">Home</a>
+    <a href="#">About Us</a>
+    <a href="#">Contact Us</a>
 
-<br><br>
+    <br><br>
 
-<!-- Search -->
-<input type="text" id="searchBox" placeholder="Search here">
-<button onclick="search()">Search</button>
-<button onclick="clearSearch()">Clear</button>
+    <!-- Search Box -->
+    <input type="text" id="searchInput" placeholder="Search...">
+    <button onclick="searchPlaces()">Search</button>
+    <button onclick="clearSearch()">Clear</button>
 
-<br><br>
+    <br><br>
 
-<!-- Results -->
-<div id="results"></div>
+    <!-- Result Section -->
+    <div id="result"></div>
 
-<script>
-function search() {
-    var input = document.getElementById("searchBox").value.toLowerCase();
-    var results = document.getElementById("results");
+    <!-- JavaScript -->
+    <script>
+        function searchPlaces() {
+            let input = document.getElementById("searchInput").value.toLowerCase();
+            let result = document.getElementById("result");
 
-    if (input === "beach") {
-        results.innerHTML = "<h2>Beaches</h2>" +
-        "<img src='https://images.unsplash.com/photo-1507525428034-b723cf961d3e' width='300'>" +
-        "<img src='https://images.unsplash.com/photo-1473116763249-2faaef81ccda' width='300'>" +
-        "<p>Goa Beach, Marina Beach</p>";
-    }
+            // BEACH
+            if (input.includes("beach")) {
+                result.innerHTML = `
+                <h2>Beaches</h2>
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" width="300">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" width="300">
+                <p>Goa Beach, Marina Beach</p>
+                `;
+            }
 
-    else if (input === "temple") {
-        results.innerHTML = "<h2>Temples</h2>" +
-        "<img src='https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3' width='300'>" +
-        "<img src='https://images.unsplash.com/photo-1603297631958-6d7a77f0b5c5' width='300'>" +
-        "<p>Tirupati Temple, Meenakshi Temple</p>";
-    }
+            // TEMPLE
+            else if (input.includes("temple")) {
+                result.innerHTML = `
+                <h2>Temples</h2>
+                <img src="https://images.unsplash.com/photo-1599661046289-e31897846e41" width="300">
+                <img src="https://images.unsplash.com/photo-1605640840605-14ac1855827b" width="300">
+                <p>Tirupati Temple, Meenakshi Temple</p>
+                `;
+            }
 
-    else if (input === "country") {
-        results.innerHTML = "<h2>Countries</h2>" +
-        "<img src='https://images.unsplash.com/photo-1524492412937-b28074a5d7da' width='300'>" +
-        "<img src='https://images.unsplash.com/photo-1502602898657-3e91760cbb34' width='300'>" +
-        "<p>India, France</p>";
-    }
-
-    else {
-        results.innerHTML = "<p>No results found</p>";
-    }
-}
-
-function clearSearch() {
-    document.getElementById("results").innerHTML = "";
-}
-</script>
-
-</body>
-</html>
+            // COUNTRY
+            else if (input.includes("country")) {
+                result.innerHTML = `
+                <h2>Countries</h2>
+                <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da" width="300">
+                <img
