@@ -2,6 +2,27 @@
 <html>
 <head>
     <title>Travel Recommendation</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 20px;
+        }
+
+        nav a {
+            margin-right: 15px;
+            font-weight: bold;
+        }
+
+        img {
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        button {
+            margin-left: 5px;
+        }
+    </style>
 </head>
 
 <body>
@@ -15,12 +36,14 @@
 
     <br>
 
-    <!-- Search Bar -->
-    <input type="text" id="searchInput" placeholder="Search here">
+    <!-- Search -->
+    <input type="text" id="searchInput" placeholder="Search (beach, temple, country)">
     <button onclick="search()">Search</button>
     <button onclick="clearSearch()">Clear</button>
 
-    <!-- Result Section -->
+    <br><br>
+
+    <!-- Result -->
     <div id="result"></div>
 
     <script>
